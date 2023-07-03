@@ -124,7 +124,14 @@ export const Main = () => {
             type="button"
             className="bg-[#ff7d1a] flex justify-center items-center mt-5 h-[50px] w-full rounded-md lg:w-[50%] lg:mt-0 lg:ml-8"
           >
-            <img src={cart} />
+            <img
+              src={cart}
+              onClick={() => {
+                setOnCart(oncart + count);
+                setCount(0);
+                console.log(oncart);
+              }}
+            />
             <p
               className="font-[700] text-white text-[0.9rem] ml-4"
               onClick={() => {
