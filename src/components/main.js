@@ -25,16 +25,22 @@ export const Main = () => {
           {products.map((product, index) => {
             const { id, img } = product;
             return (
-              <img
-                src={img}
-                onClick={() => {
-                  setPosition(index);
-                }}
+              <div
                 className={`w-[18%] rounded-2xl cursor-pointer ${
-                  position === index &&
-                  "opacity-70 border-4 border-[#ff7d1a] border-opacity-100"
+                  position === index && "ring-2 ring-[#ff7d1a]"
                 } `}
-              ></img>
+              >
+                <img
+                  src={img}
+                  alt={id}
+                  onClick={() => {
+                    setPosition(index);
+                  }}
+                  className={`w-full  rounded-2xl cursor-pointer ${
+                    position === index && "opacity-30 "
+                  } `}
+                ></img>
+              </div>
             );
           })}
         </div>
@@ -123,23 +129,14 @@ export const Main = () => {
           <button
             type="button"
             className="bg-[#ff7d1a] flex justify-center items-center mt-5 h-[50px] w-full rounded-md lg:w-[50%] lg:mt-0 lg:ml-8"
+            onClick={() => {
+              setOnCart(oncart + count);
+              setCount(0);
+              console.log(oncart);
+            }}
           >
-            <img
-              src={cart}
-              onClick={() => {
-                setOnCart(oncart + count);
-                setCount(0);
-                console.log(oncart);
-              }}
-            />
-            <p
-              className="font-[700] text-white text-[0.9rem] ml-4"
-              onClick={() => {
-                setOnCart(oncart + count);
-                setCount(0);
-                console.log(oncart);
-              }}
-            >
+            <img src={cart} />
+            <p className="font-[700] text-white text-[0.9rem] ml-4">
               Add to cart
             </p>
           </button>
