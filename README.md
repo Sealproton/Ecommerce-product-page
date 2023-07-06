@@ -1,2 +1,2 @@
 Deployed at:
-e-commerce-homepage-phun.netlify.app
+https://e-commerce-homepage-phun.netlify.app/
